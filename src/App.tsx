@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import ChatInterface from './components/ChatInterface/ChatInterface'
 import ContactForm from './components/ContactForm/ContactForm'
