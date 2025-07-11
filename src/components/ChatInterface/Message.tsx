@@ -9,7 +9,7 @@ const Message: React.FC<MessageProps> = ({ message }) => {
   const isUser = message.role === 'user';
   
   return (
-    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-6`}>
+    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}>
       <div className={`max-w-xs lg:max-w-lg ${isUser ? 'order-2' : 'order-1'}`}>
         {!isUser && (
           <div className="flex items-center mb-2">

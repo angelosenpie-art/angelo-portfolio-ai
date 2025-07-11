@@ -283,7 +283,7 @@ export const projects: Project[] = [
       "User experience design principles"
     ],
     githubUrl: "https://github.com/angelosinday/portfolio",
-    demoUrl: "https://angelosinday.vercel.app",
+    demoUrl: "https://angelosinday.me",
     status: "In Progress",
     startDate: "2025-01",
     category: "Web App"

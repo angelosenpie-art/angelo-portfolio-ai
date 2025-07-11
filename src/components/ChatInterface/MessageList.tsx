@@ -103,7 +103,7 @@ const MessageList: React.FC<MessageListProps> = ({ messages, isLoading, onQuesti
         </div>
       ) : (
         <div className="max-w-3xl mx-auto min-h-full">
-          <div className="space-y-0">
+          <div className="space-y-6">
             {messages.map((message) => (
               <Message key={message.id} message={message} />
             ))}
