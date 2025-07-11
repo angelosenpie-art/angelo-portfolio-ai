@@ -66,15 +66,8 @@ Look for these settings in Hostinger Git interface (may be in different sections
 - Deploy source code directly (you may need to build locally first)
 - Have these settings in a different location
 
-#### Step 6: Set Environment Variables in Hostinger
-1. In Hostinger control panel, go to **Advanced** → **Environment Variables**
-2. Add your production variables:
-   ```
-   VITE_GEMINI_API_KEY=your_real_gemini_key
-   VITE_EMAILJS_SERVICE_ID=your_real_service_id
-   VITE_EMAILJS_TEMPLATE_ID=your_real_template_id
-   VITE_EMAILJS_PUBLIC_KEY=your_real_public_key
-   ```
+#### Step 6: Environment Variables
+✅ **Already configured!** Your production API keys are committed in the repository, so no additional environment variable setup is needed in Hostinger.
 
 #### Step 7: Deploy
 1. Click **Deploy** in the Git section
@@ -122,19 +115,8 @@ Then in Hostinger, use the `deploy` branch instead of `main`.
 3. Navigate to your domain's `public_html` folder
 4. Upload and extract the ZIP file contents
 
-### Step 6: Environment Variables for Production
-Create a `.env.production` file in your project root with:
-
-```
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
-VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
-```
-
-**Important**: For Hostinger deployment, you'll need to:
-1. Build the project locally with your production environment variables
-2. Upload the pre-built files to Hostinger
+### Step 6: Environment Variables
+✅ **Already configured!** Production environment variables are included in the repository.
 
 ### Step 7: Domain Configuration
 1. In Hostinger, make sure your domain points to the `public_html` folder
