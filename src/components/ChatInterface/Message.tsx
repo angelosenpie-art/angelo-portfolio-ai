@@ -1,5 +1,6 @@
 import React from 'react';
 import { Message as MessageType } from '../../types';
+import ProjectList from '../ProjectList/ProjectList';
 
 interface MessageProps {
   message: MessageType;
@@ -28,6 +29,11 @@ const Message: React.FC<MessageProps> = ({ message }) => {
         >
           <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
         </div>
+        {message.showProjects && !isUser && (
+          <div className="mt-4 w-full max-w-4xl">
+            <ProjectList />
+          </div>
+        )}
         {isUser && (
           <div className="text-right mt-1">
             <span className="text-xs text-gray-500">

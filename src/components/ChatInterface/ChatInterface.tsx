@@ -23,7 +23,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
 
   const generateId = () => Math.random().toString(36).substr(2, 9);
 
-  const getAIResponse = async (userMessage: string): Promise<string> => {
+  const getAIResponse = async (userMessage: string): Promise<{ response: string; showProjects: boolean }> => {
     // Check if user is asking about contact or wants to get in touch
     const contactKeywords = ['contact', 'email', 'hire', 'work together', 'get in touch', 'reach out', 'collaborate'];
     const isContactRequest = contactKeywords.some(keyword => 
@@ -32,17 +32,39 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
 
     if (isContactRequest) {
       onShowContactForm();
-      return "Great! I've shown the contact form below where you can reach out to Angelo directly. Feel free to send him a message about your project or opportunity!";
+      return {
+        response: "Great! I've shown the contact form below where you can reach out to Angelo directly. Feel free to send him a message about your project or opportunity!",
+        showProjects: false
+      };
+    }
+
+    // Check if user is asking for website examples
+    const websiteKeywords = ['website examples', 'show me websites', 'portfolio sites', 'website portfolio', 'sites you built', 'websites you made', 'show websites', 'your work', 'examples of work', 'live sites', 'demo sites'];
+    const isWebsiteRequest = websiteKeywords.some(keyword => 
+      userMessage.toLowerCase().includes(keyword)
+    );
+
+    if (isWebsiteRequest) {
+      return {
+        response: "Here are some of the websites I've built for clients across different industries. Each project showcases different capabilities and technologies:",
+        showProjects: true
+      };
     }
 
     const response = await generateResponse(userMessage);
     
     // Add contact recommendation after 2 messages
     if (messageCount >= 1) {
-      return response + "\n\n💡 Interested in working with Angelo? Feel free to ask me to show you the contact form!";
+      return {
+        response: response + "\n\n💡 Interested in working with Angelo? Feel free to ask me to show you the contact form!",
+        showProjects: false
+      };
     }
     
-    return response;
+    return {
+      response,
+      showProjects: false
+    };
   };
 
   const handleSendMessage = async (content: string) => {
@@ -70,13 +92,14 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
     }));
 
     try {
-      const aiResponse = await getAIResponse(content);
+      const { response: aiResponse, showProjects } = await getAIResponse(content);
       
       const assistantMessage: Message = {
         id: generateId(),
         content: aiResponse,
         role: 'assistant',
         timestamp: new Date(),
+        showProjects,
       };
 
       setChatState(prev => ({

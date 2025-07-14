@@ -133,7 +133,7 @@ export const generateResponse = async (userMessage: string): Promise<string> => 
   }
 
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     
     const prompt = `${ANGELO_CONTEXT}
 

@@ -38,7 +38,7 @@ const MessageList: React.FC<MessageListProps> = ({ messages, isLoading, onQuesti
   const recommendedQuestions = [
     "What technologies does Angelo work with?",
     "Tell me about Angelo's WordPress experience",
-    "What projects has Angelo worked on?",
+    "Show me website examples",
     "How does Angelo use AI in development?",
     "What's Angelo's experience with e-commerce?",
     "Tell me about Angelo's security expertise"
