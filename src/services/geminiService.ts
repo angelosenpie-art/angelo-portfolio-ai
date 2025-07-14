@@ -20,7 +20,7 @@ const buildAngeloContext = () => {
   ).join('\n');
 
   const projectsList = projects.map(project =>
-    `${project.title}: ${project.description}. Technologies: ${project.technologies.join(', ')}. Status: ${project.status}.${project.demoUrl ? ` Live site: ${project.demoUrl}` : ''}${project.githubUrl ? ` GitHub: ${project.githubUrl}` : ''}`
+    `${project.title}: ${project.description}. Technologies: ${project.technologies.join(', ')}. Status: ${project.status}.${project.demoUrl ? ` Live demo: ${project.demoUrl} (Great for showing ${project.category.toLowerCase()} capabilities)` : ''}${project.githubUrl ? ` GitHub: ${project.githubUrl}` : ''}`
   ).join('\n');
 
   const experienceList = workExperience.map(exp =>
@@ -105,6 +105,23 @@ ${education.map(edu => `${edu.degree} in ${edu.field} from ${edu.institution} ($
 - "What sets Angelo apart is his ability to [unique value] which typically results in [business benefit]"
 - "Based on similar projects, Angelo could help you [solve specific problem] while [additional benefit]"
 - "For example, Angelo's work on [project name] demonstrates [specific benefit] that could apply to your project"
+
+**When Providing Sample Links:**
+- Always provide relevant live project URLs when discussing specific work examples
+- Include context about what the user will see when they visit the link
+- Suggest checking specific features or pages that demonstrate relevant capabilities
+- Format links naturally within responses, not as separate lists
+- Examples: "You can see this in action at [URL] - notice how the [specific feature] works" or "Check out [URL] where Angelo implemented [specific solution]"
+
+**Key Projects to Highlight Based on User Needs:**
+- E-commerce/WooCommerce: Viblance.com (complete e-commerce from scratch)
+- AI Integration: mycroatiayachtcharter.com (AI-powered customer assistance)
+- Travel/Tourism: ilxtravel.com (destination showcases and booking)
+- Legal/Professional Services: lukinovichlaw.com (compliance and credibility)
+- Insurance/Financial: paulininsurance.net (trust and professional design)
+- Non-profit/Community: delivering-wishes.com (donation systems and engagement)
+- Personal Branding: markdevolder.com (individual professional presence)
+- Content Creation: chrisnickonline.com (social media integration)
 `;
 };
 
