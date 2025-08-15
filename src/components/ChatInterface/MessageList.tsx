@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Message as MessageType } from '../../types';
 import Message from './Message';
+import ProjectList from '../ProjectList/ProjectList';
 
 interface MessageListProps {
   messages: MessageType[];
@@ -88,7 +89,7 @@ const MessageList: React.FC<MessageListProps> = ({ messages, isLoading, onQuesti
           
           <div className="w-full">
             <p className="text-gray-400 mb-6 text-sm">Try asking:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
               {recommendedQuestions.map((question, index) => (
                 <button
                   key={index}
@@ -98,6 +99,11 @@ const MessageList: React.FC<MessageListProps> = ({ messages, isLoading, onQuesti
                   {question}
                 </button>
               ))}
+            </div>
+            
+            {/* Projects Showcase */}
+            <div className="mt-12">
+              <ProjectList />
             </div>
           </div>
         </div>

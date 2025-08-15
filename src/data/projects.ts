@@ -258,37 +258,6 @@ export const projects: Project[] = [
     category: "Web App"
   },
   {
-    id: "portfolio-ai",
-    title: "AI-Powered Portfolio Website",
-    description: "Interactive portfolio with AI assistant that answers questions about my background and skills",
-    longDescription: "A modern portfolio website featuring an AI-powered chatbot that can answer questions about my experience, skills, and projects. Built with React, TypeScript, and Google Gemini AI.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Google Gemini AI", "EmailJS", "Vite"],
-    features: [
-      "AI chatbot with contextual responses",
-      "Contact form with email integration",
-      "Responsive design for all devices",
-      "Modern UI with smooth animations",
-      "TypeScript for type safety"
-    ],
-    challenges: [
-      "Integrating AI API with proper error handling",
-      "Creating a natural conversation flow",
-      "Optimizing for performance and SEO",
-      "Designing an intuitive user interface"
-    ],
-    lessons: [
-      "Working with modern AI APIs",
-      "Advanced React patterns and hooks",
-      "TypeScript best practices",
-      "User experience design principles"
-    ],
-    githubUrl: "https://github.com/angelosinday/portfolio",
-    demoUrl: "https://angelosinday.me",
-    status: "In Progress",
-    startDate: "2025-01",
-    category: "Web App"
-  },
-  {
     id: "ecommerce-platform",
     title: "E-commerce Platform",
     description: "Full-stack e-commerce solution with modern payment processing and inventory management",
