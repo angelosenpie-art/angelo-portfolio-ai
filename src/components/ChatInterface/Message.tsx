@@ -1,6 +1,7 @@
 import React from 'react';
 import { Message as MessageType } from '../../types';
 import ProjectList from '../ProjectList/ProjectList';
+import TestimonialsCarousel from '../TestimonialsCarousel/TestimonialsCarousel';
 
 interface MessageProps {
   message: MessageType;
@@ -32,6 +33,11 @@ const Message: React.FC<MessageProps> = ({ message }) => {
         {message.showProjects && !isUser && (
           <div className="mt-4 w-full max-w-4xl">
             <ProjectList />
+          </div>
+        )}
+        {message.showTestimonials && !isUser && (
+          <div className="mt-4 w-full max-w-4xl">
+            <TestimonialsCarousel />
           </div>
         )}
         {isUser && (

@@ -4,6 +4,7 @@ export interface Message {
   role: 'user' | 'assistant';
   timestamp: Date;
   showProjects?: boolean;
+  showTestimonials?: boolean;
 }
 
 export interface ChatState {

@@ -50,6 +50,70 @@ export const projects: Project[] = [
     category: "Web App"
   },
   {
+    id: "mn8-wealth",
+    title: "MN8 Wealth Management",
+    description: "Professional wealth management website with homepage redesign focusing on user experience",
+    longDescription: "Complete homepage redesign for a wealth management firm, focusing on modern design principles, improved user experience, and professional presentation of financial services.",
+    technologies: ["WordPress", "CSS3", "JavaScript", "Responsive Design", "PHP"],
+    features: [
+      "Modern homepage redesign",
+      "Professional financial services layout",
+      "Improved user experience design",
+      "Responsive design for all devices",
+      "Clean and professional aesthetic",
+      "Optimized content presentation"
+    ],
+    challenges: [
+      "Creating trust through professional design",
+      "Balancing information density with readability",
+      "Ensuring compliance with financial industry standards",
+      "Optimizing for conversion and engagement"
+    ],
+    lessons: [
+      "Financial services web design best practices",
+      "Homepage optimization strategies",
+      "Professional service industry requirements",
+      "User experience design for financial sector"
+    ],
+    demoUrl: "https://mn8wealth.com.au/",
+    status: "Completed",
+    startDate: "2025-01",
+    endDate: "2025-02",
+    category: "Web App"
+  },
+  {
+    id: "hands-off-hosting",
+    title: "Hands Off Hosting",
+    description: "Complex gravity form integration with JetEngine for advanced hosting service functionalities",
+    longDescription: "Developed complex form integrations using Gravity Forms and JetEngine to create advanced functionality for a hosting service provider, enabling sophisticated data collection and processing workflows.",
+    technologies: ["WordPress", "Gravity Forms", "JetEngine", "PHP", "JavaScript", "MySQL"],
+    features: [
+      "Complex Gravity Forms integration",
+      "JetEngine custom functionality",
+      "Advanced form processing workflows",
+      "Custom data collection systems",
+      "Automated hosting service processes",
+      "Integration with hosting APIs"
+    ],
+    challenges: [
+      "Integrating complex form systems",
+      "Creating seamless JetEngine workflows",
+      "Managing complex data relationships",
+      "Ensuring reliable form processing"
+    ],
+    lessons: [
+      "Advanced Gravity Forms customization",
+      "JetEngine integration techniques",
+      "Complex WordPress plugin interactions",
+      "Hosting industry workflow automation"
+    ],
+    demoUrl: "https://handsoffhosting.net/",
+    status: "Completed",
+    startDate: "2024-11",
+    endDate: "2025-01",
+    category: "Web App"
+  },
+  {
     id: "ilx-travel",
     title: "ILX Travel",
     description: "Premium travel agency website with booking management system",

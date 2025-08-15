@@ -23,7 +23,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
 
   const generateId = () => Math.random().toString(36).substr(2, 9);
 
-  const getAIResponse = async (userMessage: string): Promise<{ response: string; showProjects: boolean }> => {
+  const getAIResponse = async (userMessage: string): Promise<{ response: string; showProjects: boolean; showTestimonials: boolean }> => {
     // Check if user is asking about contact or wants to get in touch
     const contactKeywords = ['contact', 'email', 'hire', 'work together', 'get in touch', 'reach out', 'collaborate'];
     const isContactRequest = contactKeywords.some(keyword => 
@@ -34,7 +34,22 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
       onShowContactForm();
       return {
         response: "Great! I've shown the contact form below where you can reach out to Angelo directly. Feel free to send him a message about your project or opportunity!",
-        showProjects: false
+        showProjects: false,
+        showTestimonials: false
+      };
+    }
+
+    // Check if user is asking for testimonials
+    const testimonialKeywords = ['testimonials', 'reviews', 'feedback', 'client testimonials', 'show me testimonials', 'what clients say', 'client reviews', 'testimonials from clients'];
+    const isTestimonialRequest = testimonialKeywords.some(keyword => 
+      userMessage.toLowerCase().includes(keyword)
+    );
+
+    if (isTestimonialRequest) {
+      return {
+        response: "Here are testimonials from my satisfied clients on Upwork. These reviews showcase the quality of work and client satisfaction I consistently deliver:",
+        showProjects: false,
+        showTestimonials: true
       };
     }
 
@@ -47,7 +62,8 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
     if (isWebsiteRequest) {
       return {
         response: "Here are some of the websites I've built for clients across different industries. Each project showcases different capabilities and technologies:",
-        showProjects: true
+        showProjects: true,
+        showTestimonials: false
       };
     }
 
@@ -57,13 +73,15 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
     if (messageCount >= 1) {
       return {
         response: response + "\n\n💡 Interested in working with Angelo? Feel free to ask me to show you the contact form!",
-        showProjects: false
+        showProjects: false,
+        showTestimonials: false
       };
     }
     
     return {
       response,
-      showProjects: false
+      showProjects: false,
+      showTestimonials: false
     };
   };
 
@@ -92,7 +110,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
     }));
 
     try {
-      const { response: aiResponse, showProjects } = await getAIResponse(content);
+      const { response: aiResponse, showProjects, showTestimonials } = await getAIResponse(content);
       
       const assistantMessage: Message = {
         id: generateId(),
@@ -100,6 +118,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
         role: 'assistant',
         timestamp: new Date(),
         showProjects,
+        showTestimonials,
       };
 
       setChatState(prev => ({
@@ -130,7 +149,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   };
 
   return (
-    <div className="w-full min-h-screen max-w-3xl mx-auto flex flex-col">
+    <div className="w-full min-h-screen min-h-dvh max-w-3xl mx-auto flex flex-col bg-transparent">
       <MessageList 
         messages={chatState.messages} 
         isLoading={chatState.isLoading}

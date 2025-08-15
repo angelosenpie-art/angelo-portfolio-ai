@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html, body {
+    @apply bg-black;
+    min-height: 100vh;
+    min-height: 100dvh; /* For mobile devices */
+  }
+  
+  #root {
+    @apply bg-black;
+    min-height: 100vh;
+    min-height: 100dvh; /* For mobile devices */
+  }
+}
+
 @layer utilities {
   .bg-gradient-radial {
     background-image: radial-gradient(var(--tw-gradient-stops));

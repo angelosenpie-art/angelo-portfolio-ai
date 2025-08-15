@@ -9,7 +9,20 @@ const ProjectList: React.FC = () => {
   
   // Carousel state
   const [currentIndex, setCurrentIndex] = useState(0);
-  const projectsPerPage = 2; // Show 2 projects at a time
+  
+  // Responsive projects per page: 1 on mobile, 2 on desktop
+  const [projectsPerPage, setProjectsPerPage] = useState(2);
+  
+  React.useEffect(() => {
+    const updateProjectsPerPage = () => {
+      setProjectsPerPage(window.innerWidth < 768 ? 1 : 2);
+    };
+    
+    updateProjectsPerPage();
+    window.addEventListener('resize', updateProjectsPerPage);
+    return () => window.removeEventListener('resize', updateProjectsPerPage);
+  }, []);
+  
   const totalPages = Math.ceil(websiteProjects.length / projectsPerPage);
   
   const nextSlide = () => {
@@ -33,7 +46,7 @@ const ProjectList: React.FC = () => {
       {/* Carousel Container */}
       <div className="relative">
         {/* Projects Grid */}
-        <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 min-h-[200px] mb-6">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 min-h-[200px] mb-6">
           {currentProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

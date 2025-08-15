@@ -16,12 +16,12 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-black relative flex flex-col">
+    <div className="min-h-screen min-h-dvh bg-black relative flex flex-col">
       {/* Circular gradient backgrounds */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-orange-500/20 via-orange-600/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-radial from-blue-500/15 via-blue-600/8 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-radial from-purple-500/12 via-purple-600/6 to-transparent rounded-full blur-2xl"></div>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-orange-500/20 via-orange-600/10 to-transparent rounded-full blur-3xl sm:w-80 sm:h-80"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-radial from-blue-500/15 via-blue-600/8 to-transparent rounded-full blur-3xl sm:w-64 sm:h-64"></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-radial from-purple-500/12 via-purple-600/6 to-transparent rounded-full blur-2xl sm:w-48 sm:h-48"></div>
       </div>
       
       <div className="flex-1 relative z-10">

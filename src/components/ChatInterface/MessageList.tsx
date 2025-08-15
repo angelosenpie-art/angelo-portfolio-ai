@@ -39,10 +39,10 @@ const MessageList: React.FC<MessageListProps> = ({ messages, isLoading, onQuesti
   const recommendedQuestions = [
     "What technologies does Angelo work with?",
     "Tell me about Angelo's WordPress experience",
-    "Show me website examples",
+    "Show me testimonials from clients",
     "How does Angelo use AI in development?",
     "What's Angelo's experience with e-commerce?",
-    "Tell me about Angelo's security expertise"
+    "What's Angelo's Shopify experience?"
   ];
 
   const handleQuestionClick = (question: string) => {
@@ -80,12 +80,9 @@ const MessageList: React.FC<MessageListProps> = ({ messages, isLoading, onQuesti
   return (
     <div className="flex-1 px-4 py-8">
       {messages.length === 0 ? (
-        <div className="flex flex-col items-center justify-center min-h-screen max-w-3xl mx-auto text-center">
-          <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mb-6 shadow-lg">
-            <span className="text-white text-2xl font-medium">A</span>
-          </div>
-          <h1 className="text-4xl font-bold text-white mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Hi! I'm Angelo's AI Assistant</h1>
-          <p className="text-gray-300 text-lg mb-12 max-w-lg leading-relaxed">Ask me anything about Angelo's background, skills, projects, and experience. I'm here to help!</p>
+        <div className="flex flex-col items-center justify-center min-h-screen min-h-dvh max-w-3xl mx-auto text-center px-4 sm:px-6">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Hi! I'm Angelo's AI Assistant</h1>
+          <p className="text-gray-300 text-base sm:text-lg mb-8 sm:mb-12 max-w-lg leading-relaxed">Ask me anything about Angelo's background, skills, projects, and experience. I'm here to help!</p>
           
           <div className="w-full">
             <p className="text-gray-400 mb-6 text-sm">Try asking:</p>
