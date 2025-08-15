@@ -27,6 +27,9 @@ const ProjectList: React.FC = () => {
 
   return (
     <div className="space-y-6">
+      {/* Title */}
+      <h2 className="text-xl font-medium text-white text-left">Recent projects</h2>
+      
       {/* Carousel Container */}
       <div className="relative">
         {/* Projects Grid */}
